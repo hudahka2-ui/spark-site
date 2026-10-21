@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Times-Table Adventure | Spark Leadership Academy</title>
+<meta name="description" content="أكاديمية سبارك للقيادة المهنية: برامج ودبلومات وورش تدريبية للمعلمين والمعلمات والكوادر الإدارية، عن بُعد من جميع دول العالم.">
+<style>html,body{margin:0;padding:0;background:#fff}</style>
+</head>
+<body>
+<!-- Spark Academy | Free English game: Times-Table Adventure | GoHighLevel Custom Code -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+
+<style>
+#spark-game-en :where(p,h1,h2,h3,h4,h5,h6,ul,ol,li,a,img,button,input,select,textarea,label,figure,figcaption,details,summary,table,th,td,video,blockquote,small,b,strong,em){all:revert}#spark-game-en{display:block;position:relative}#spark-game-en *{box-sizing:border-box}#spark-game-en [hidden]{display:none!important}#spark-game-en img{border:0}
+
+/* Layout: a station map (five cards) -> one question per screen -> star tally -> named certificate. Light, playful, Spark colours. */
+#spark-game-en{--bg:#F3F7FC;--card:#fff;--ink:#1F2340;--mute:#5E6582;--line:#DCE4F2;--plum:#6E1F35;--violet:#5B3FA0;--gold:#E0A526;--ok:#1F9D55;--bad:#C53030;color-scheme:light}
+#spark-game-en *{box-sizing:border-box}
+#spark-game-en{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,system-ui,sans-serif;direction:ltr;min-height:100vh;position:relative}
+#spark-game-en .wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 120px max(16px,env(safe-area-inset-left,0px))}
+#spark-game-en header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+#spark-game-en header img{height:56px}
+#spark-game-en header b{display:block;font-size:1.15rem;color:var(--plum);font-weight:900}
+#spark-game-en header small{color:var(--mute);font-weight:600}
+#spark-game-en h1{font-size:clamp(1.7rem,5.5vw,2.5rem);margin:4px 0 6px;color:var(--violet);font-weight:900;line-height:1.3}
+#spark-game-en .lead{color:var(--mute);margin:0 0 18px;line-height:1.8;font-size:1.05rem}
+#spark-game-en .hero{display:block;width:100%;max-height:340px;object-fit:cover;border-radius:22px;border:4px solid #fff;box-shadow:0 14px 30px -18px rgba(40,60,120,.6);margin:0 0 14px}
+#spark-game-en .stars{font-weight:900;color:var(--gold);font-size:1.15rem}
+#spark-game-en .map{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:14px;margin-top:8px}
+#spark-game-en .st{all:unset;cursor:pointer;display:grid;gap:6px;background:var(--card);border:1px solid var(--line);border-top:8px solid var(--c);border-radius:22px;padding:18px;box-shadow:0 12px 28px -22px rgba(40,60,120,.55);transition:transform .15s}
+#spark-game-en .st:hover,#spark-game-en .st:focus-visible{transform:translateY(-3px);outline:2px solid var(--c)}
+#spark-game-en .st .e{font-size:2.4rem}#spark-game-en .st b{font-size:1.25rem;font-weight:900}#spark-game-en .st small{color:var(--mute);font-weight:700}
+#spark-game-en .st.done{background:linear-gradient(180deg,#FFFBEA,#fff)}
+#spark-game-en .cta{all:unset;cursor:pointer;display:inline-block;margin-top:18px;background:linear-gradient(135deg,var(--plum),var(--violet));color:#fff;font-weight:800;padding:.75em 1.7em;border-radius:999px;font-size:1.05rem}
+#spark-game-en .cta[disabled]{opacity:.45;cursor:default}
+#spark-game-en .panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 14px 34px -24px rgba(40,60,120,.55)}
+#spark-game-en .top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+#spark-game-en .back{all:unset;cursor:pointer;font-weight:800;color:var(--violet);background:#EEF0FB;border-radius:999px;padding:.35em 1em}
+#spark-game-en .bar{height:8px;background:#E3EAF5;border-radius:99px;overflow:hidden;margin-bottom:16px}#spark-game-en .bar i{display:block;height:100%;background:var(--c);transition:width .3s}
+#spark-game-en .num{color:var(--c);font-weight:900}
+#spark-game-en .q{font-size:clamp(1.3rem,4vw,1.65rem);font-weight:800;line-height:1.6;margin:6px 0 16px}
+#spark-game-en .opts{display:grid;gap:10px}
+#spark-game-en .opt{all:unset;cursor:pointer;display:block;background:#F8FAFE;border:2px solid var(--line);border-radius:16px;padding:14px 18px;font-size:1.15rem;font-weight:700;line-height:1.6}
+#spark-game-en .opt:hover:not([disabled]),#spark-game-en .opt:focus-visible{border-color:var(--c)}
+#spark-game-en .opt.ok{background:#E6F7EE;border-color:var(--ok)}#spark-game-en .opt.bad{background:#FDECEC;border-color:var(--bad)}#spark-game-en .opt[disabled]{cursor:default}
+#spark-game-en .fb{margin-top:16px;border-radius:16px;padding:16px;line-height:1.85;display:none;font-size:1.05rem}
+#spark-game-en .fb.show{display:block}#spark-game-en .fb.ok{background:#E6F7EE;border:1px solid #9FD9B7}#spark-game-en .fb.bad{background:#FFF4E5;border:1px solid #F3C98B}
+#spark-game-en .fb b{display:block;font-size:1.15rem;margin-bottom:4px}
+#spark-game-en .end{text-align:center}#spark-game-en .end .big{font-size:3.4rem}#spark-game-en .end h2{color:var(--violet);font-size:1.8rem;margin:6px 0}#spark-game-en .end p{color:var(--mute);line-height:1.8}
+#spark-game-en .cert{margin-top:18px;border:3px double var(--gold);border-radius:20px;padding:22px;background:linear-gradient(180deg,#FFFDF5,#fff);text-align:center}
+#spark-game-en .cert h3{margin:0;color:var(--plum);font-size:1.6rem;font-weight:900}
+#spark-game-en .cert .nm{font-size:1.9rem;font-weight:900;color:var(--violet);margin:10px 0;min-height:1.4em;border-bottom:2px dashed var(--line)}
+#spark-game-en .cert input{font:inherit;font-size:1.1rem;padding:.5em .9em;border:2px solid var(--line);border-radius:12px;width:min(100%,320px);text-align:center}
+#spark-game-en .ribbon{position:fixed;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(90deg,#6E1F35,#5B3FA0);color:#fff;text-align:center;font-size:12.5px;line-height:1.6;padding:8px max(12px,env(safe-area-inset-left,0px)) calc(8px + env(safe-area-inset-bottom,0px))}
+#spark-game-en .ribbon b{color:#F3D9A8}#spark-game-en .ribbon bdi{white-space:nowrap}
+@media (prefers-reduced-motion:reduce){#spark-game-en *{transition:none!important}}
+@media print{#spark-game-en .ribbon,#spark-game-en .back,#spark-game-en .cta,#spark-game-en header,#spark-game-en .cert input,#spark-game-en .cert label{display:none!important}#spark-game-en .panel{box-shadow:none;border:0}}
+
+</style>
+<div id="spark-game-en" dir="ltr" lang="en">
+<div class="wrap">
+  <header><img src="/assets/4cad3da84a1dce62.png" alt="Spark Leadership Academy"><div><b>Times-Table Adventure</b><small>A free game by Spark Academy</small></div></header>
+  <div id="app"></div>
+</div>
+<div class="ribbon"><b>Prepared and presented by:</b> Certified Trainer Huda Walid • Certified Professional Trainer diploma (<bdi>TOT-CPT</bdi>) from <bdi>EBC</bdi>, a center licensed by <bdi>KHDA</bdi><br>© All rights reserved, Spark Leadership Academy</div>
+</div>
+<script>
+(function(){
+
+const HERO="",HEROALT="";const ST=[{"id": "s1", "em": "🏖️", "c": "#1F9E9A", "name": "1. Beginners’ Beach", "sub": "Tables 1, 2, 10", "q": [{"t": "2 × 3 = ?", "o": ["3", "9", "6"], "c": 2, "f": "2 × 3 = 6. Times 2 means doubling."}, {"t": "1 × 2 = ?", "o": ["2", "3", "1"], "c": 0, "f": "1 × 2 = 2. Any number × 1 stays the same."}, {"t": "10 × 1 = ?", "o": ["10", "11", "9"], "c": 0, "f": "10 × 1 = 10. Any number × 1 stays the same."}, {"t": "2 × 7 = ?", "o": ["7", "13", "14"], "c": 2, "f": "2 × 7 = 14. Times 2 means doubling."}, {"t": "2 × 10 = ?", "o": ["20", "22", "30"], "c": 0, "f": "2 × 10 = 20. Times 10: just add a zero."}]}, {"id": "s2", "em": "🌳", "c": "#2FA25B", "name": "2. Forest of Fives", "sub": "Tables 5", "q": [{"t": "5 × 5 = ?", "o": ["25", "26", "20"], "c": 0, "f": "5 × 5 = 25. Fives always end in 0 or 5."}, {"t": "5 × 8 = ?", "o": ["35", "48", "40"], "c": 2, "f": "5 × 8 = 40. Fives always end in 0 or 5."}, {"t": "1 × 5 = ?", "o": ["5", "6", "15"], "c": 0, "f": "1 × 5 = 5. Fives always end in 0 or 5."}, {"t": "2 × 5 = ?", "o": ["8", "9", "10"], "c": 2, "f": "2 × 5 = 10. Fives always end in 0 or 5."}, {"t": "7 × 5 = ?", "o": ["36", "35", "28"], "c": 1, "f": "7 × 5 = 35. Fives always end in 0 or 5."}]}, {"id": "s3", "em": "⛰️", "c": "#8A5A2B", "name": "3. Mountain of Threes", "sub": "Tables 3", "q": [{"t": "3 × 6 = ?", "o": ["24", "28", "18"], "c": 2, "f": "3 × 6 = 18. Count up in threes: 3, 6, 9, 12…"}, {"t": "4 × 3 = ?", "o": ["11", "12", "16"], "c": 1, "f": "4 × 3 = 12. Count up in threes: 3, 6, 9, 12…"}, {"t": "3 × 4 = ?", "o": ["12", "22", "13"], "c": 0, "f": "3 × 4 = 12. Count up in threes: 3, 6, 9, 12…"}, {"t": "7 × 3 = ?", "o": ["24", "21", "18"], "c": 1, "f": "7 × 3 = 21. Count up in threes: 3, 6, 9, 12…"}, {"t": "3 × 3 = ?", "o": ["10", "12", "9"], "c": 2, "f": "3 × 3 = 9. Count up in threes: 3, 6, 9, 12…"}]}, {"id": "s4", "em": "🌊", "c": "#2B7BD6", "name": "4. River of Fours", "sub": "Tables 4", "q": [{"t": "4 × 2 = ?", "o": ["10", "6", "8"], "c": 2, "f": "4 × 2 = 8. Fours are double the twos."}, {"t": "4 × 4 = ?", "o": ["16", "15", "12"], "c": 0, "f": "4 × 4 = 16. Fours are double the twos."}, {"t": "4 × 9 = ?", "o": ["27", "35", "36"], "c": 2, "f": "4 × 9 = 36. Fours are double the twos."}, {"t": "4 × 10 = ?", "o": ["40", "50", "36"], "c": 0, "f": "4 × 10 = 40. Fours are double the twos."}, {"t": "10 × 4 = ?", "o": ["36", "40", "39"], "c": 1, "f": "10 × 4 = 40. Fours are double the twos."}]}, {"id": "s5", "em": "🦇", "c": "#6B4FA8", "name": "5. Cave of Sixes", "sub": "Tables 6", "q": [{"t": "6 × 10 = ?", "o": ["61", "60", "50"], "c": 1, "f": "6 × 10 = 60. Sixes are double the threes."}, {"t": "7 × 6 = ?", "o": ["52", "43", "42"], "c": 2, "f": "7 × 6 = 42. Sixes are double the threes."}, {"t": "9 × 6 = ?", "o": ["45", "53", "54"], "c": 2, "f": "9 × 6 = 54. Sixes are double the threes."}, {"t": "6 × 5 = ?", "o": ["40", "30", "29"], "c": 1, "f": "6 × 5 = 30. Sixes are double the threes."}, {"t": "6 × 4 = ?", "o": ["24", "25", "23"], "c": 0, "f": "6 × 4 = 24. Sixes are double the threes."}]}, {"id": "s6", "em": "🐪", "c": "#D98A1A", "name": "6. Desert of Sevens", "sub": "Tables 7", "q": [{"t": "4 × 7 = ?", "o": ["38", "28", "21"], "c": 1, "f": "4 × 7 = 28. Sevens are a little harder: take your time!"}, {"t": "7 × 2 = ?", "o": ["21", "14", "12"], "c": 1, "f": "7 × 2 = 14. Sevens are a little harder: take your time!"}, {"t": "9 × 7 = ?", "o": ["62", "72", "63"], "c": 2, "f": "9 × 7 = 63. Sevens are a little harder: take your time!"}, {"t": "7 × 4 = ?", "o": ["32", "28", "24"], "c": 1, "f": "7 × 4 = 28. Sevens are a little harder: take your time!"}, {"t": "7 × 5 = ?", "o": ["28", "35", "34"], "c": 1, "f": "7 × 5 = 35. Sevens are a little harder: take your time!"}]}, {"id": "s7", "em": "🏰", "c": "#B0457E", "name": "7. Castle of Eights", "sub": "Tables 8", "q": [{"t": "10 × 8 = ?", "o": ["81", "80", "90"], "c": 1, "f": "10 × 8 = 80. Eights are double the fours."}, {"t": "8 × 9 = ?", "o": ["64", "72", "73"], "c": 1, "f": "8 × 9 = 72. Eights are double the fours."}, {"t": "6 × 8 = ?", "o": ["54", "48", "49"], "c": 1, "f": "6 × 8 = 48. Eights are double the fours."}, {"t": "8 × 8 = ?", "o": ["64", "56", "72"], "c": 0, "f": "8 × 8 = 64. Eights are double the fours."}, {"t": "3 × 8 = ?", "o": ["24", "23", "34"], "c": 0, "f": "3 × 8 = 24. Eights are double the fours."}]}, {"id": "s8", "em": "🗼", "c": "#C0392B", "name": "8. Tower of Nines", "sub": "Tables 9", "q": [{"t": "10 × 9 = ?", "o": ["90", "99", "81"], "c": 0, "f": "10 × 9 = 90. Trick for nines up to 90: the digits of the answer add up to 9."}, {"t": "4 × 9 = ?", "o": ["32", "36", "37"], "c": 1, "f": "4 × 9 = 36. Trick for nines up to 90: the digits of the answer add up to 9."}, {"t": "9 × 6 = ?", "o": ["54", "60", "55"], "c": 0, "f": "9 × 6 = 54. Trick for nines up to 90: the digits of the answer add up to 9."}, {"t": "3 × 9 = ?", "o": ["18", "28", "27"], "c": 2, "f": "3 × 9 = 27. Trick for nines up to 90: the digits of the answer add up to 9."}, {"t": "9 × 4 = ?", "o": ["36", "37", "40"], "c": 0, "f": "9 × 4 = 36. Trick for nines up to 90: the digits of the answer add up to 9."}]}, {"id": "s9", "em": "🏝️", "c": "#E0559B", "name": "9. Treasure Island", "sub": "All tables", "q": [{"t": "6 × 6 = ?", "o": ["36", "35", "42"], "c": 0, "f": "6 × 6 = 36. Sixes are double the threes."}, {"t": "3 × 2 = ?", "o": ["6", "5", "8"], "c": 0, "f": "3 × 2 = 6. Count up in threes: 3, 6, 9, 12…"}, {"t": "9 × 9 = ?", "o": ["81", "91", "80"], "c": 0, "f": "9 × 9 = 81. Trick for nines up to 90: the digits of the answer add up to 9."}, {"t": "7 × 7 = ?", "o": ["42", "48", "49"], "c": 2, "f": "7 × 7 = 49. Sevens are a little harder: take your time!"}, {"t": "3 × 3 = ?", "o": ["12", "19", "9"], "c": 2, "f": "3 × 3 = 9. Count up in threes: 3, 6, 9, 12…"}]}], TOTAL=ST.reduce((n,s)=>n+s.q.length,0);
+const AR=n=>String(n);
+const best={};
+const app=document.querySelector('#spark-game-en #app');
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const sum=()=>Object.values(best).reduce((a,b)=>a+b,0);
+function map(){app.innerHTML='';if(HERO){const im=el('img','hero');im.src=HERO;im.alt=HEROALT;app.append(im)}
+  app.append(el('h1',null,'🗺️ Times-Table Adventure'),el('p','lead','Nine stations on the way to Treasure Island. Answer, collect stars, and earn your champion certificate.'));
+  app.append(el('div','stars','⭐ Stars: '+sum()+' of '+TOTAL));
+  const m=el('div','map');ST.forEach(s=>{const b=el('button','st'+(s.id in best?' done':''));b.type='button';b.style.setProperty('--c',s.c);
+    b.append(el('span','e',s.em),el('b',null,s.name),el('small',null,s.id in best?'✔ Done: '+best[s.id]+' of '+s.q.length+' stars':(s.sub||s.q.length+' questions')));b.onclick=()=>play(s,0,0);m.append(b)});
+  app.append(m);
+  const all=Object.keys(best).length===ST.length;const c=el('button','cta',all?'🏅 Get your certificate':'🏅 Certificate after all stations');c.type='button';c.disabled=!all;c.onclick=cert;app.append(c)}
+function play(s,i,score){app.innerHTML='';const q=s.q[i];const p=el('div','panel');p.style.setProperty('--c',s.c);
+  const top=el('div','top');const bk=el('button','back','🗺️ Map');bk.type='button';bk.onclick=map;top.append(bk,el('span','stars','⭐ '+AR(score)));p.append(top);
+  const bar=el('div','bar');const f=el('i');f.style.width=(i/s.q.length*100)+'%';bar.append(f);p.append(bar);
+  p.append(el('div','num',s.em+' '+s.name+' • Question '+(i+1)+' of '+s.q.length),el('div','q',q.t));
+  const opts=el('div','opts');const fb=el('div','fb');
+  shuffle(q.o.map((t,k)=>({t,k}))).forEach(o=>{const b=el('button','opt',o.t);b.type='button';b.dataset.k=o.k;b.onclick=()=>{
+    const right=o.k===q.c;opts.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+    b.classList.add(right?'ok':'bad');if(!right)opts.querySelector('[data-k="'+q.c+'"]').classList.add('ok');
+    fb.className='fb show '+(right?'ok':'bad');fb.innerHTML='';
+    fb.append(el('b',null,right?'⭐ Well done! That’s correct.':'💡 Not quite. The correct answer is shown in green.'),el('div',null,(/^[A-Za-z]/.test(q.f)?'Did you know? ':'')+q.f));
+    const ns=score+(right?1:0);const nx=el('button','cta',i+1<s.q.length?'Next question →':'Finish station 🏁');nx.type='button';
+    nx.onclick=()=>i+1<s.q.length?play(s,i+1,ns):done(s,ns);fb.append(el('br'),nx);fb.scrollIntoView({behavior:'smooth',block:'nearest'})};opts.append(b)});
+  p.append(opts,fb);app.append(p);window.scrollTo(0,0)}
+function done(s,score){best[s.id]=Math.max(best[s.id]||0,score);app.innerHTML='';const p=el('div','panel end');p.style.setProperty('--c',s.c);
+  const n=s.q.length;p.append(el('div','big',score===n?'🏆':score>=3?'🌟':'🌱'),el('h2',null,s.name+' complete!'),el('div','stars','⭐ '+score+' of '+n),
+    el('p',null,score===n?'A perfect score! You are a times-table champion.':score>=3?'Great work! Replay the station to collect every star.':'A good start. Play the station again and the answers will stick.'));
+  const a=el('button','cta','Replay station ↻');a.type='button';a.onclick=()=>play(s,0,0);
+  const b=el('button','back','🗺️ Back to the map');b.type='button';b.onclick=map;b.style.marginInlineStart='10px';p.append(a,b);app.append(p)}
+function cert(){app.innerHTML='';const p=el('div','panel end');const s=sum();
+  p.append(el('div','big','🏅'),el('h2',null,'You finished the whole journey!'),el('div','stars','⭐ '+s+' of '+TOTAL+' stars'));
+  const c=el('div','cert');const nm=el('div','nm','');
+  const lb=el('label',null,'Write the name here: ');const inp=el('input');inp.type='text';inp.placeholder='Name';inp.oninput=()=>nm.textContent=inp.value;lb.append(inp);
+  c.append(el('h3',null,'Times-Table Champion Certificate'),el('p',null,'Spark Academy certifies that'),nm,el('p',null,'completed “Times-Table Adventure” and collected '+s+' of '+TOTAL+' stars.'),lb);
+  const pr=el('button','cta','🖨️ Print the certificate');pr.type='button';pr.onclick=()=>window.print();
+  const b=el('button','back','🗺️ Back to the map');b.type='button';b.onclick=map;b.style.marginInlineStart='10px';
+  p.append(c,pr,b);app.append(p)}
+map();
+
+})();
+</script>
+
+</body>
+</html>
