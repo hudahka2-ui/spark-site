@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسطرة الفهم ومحطة الأسئلة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241A33; --muted:#5E536F; --line:#D9CFE8; --plum:#6E1F35; --violet:#5B3FA0; --gold:#B8925A;
+  --l1:#C0392B; --l1bg:#FDECEA;
+  --l2:#D9822B; --l2bg:#FEF3E6;
+  --l3:#2E8B57; --l3bg:#E9F6EF;
+  --l4:#3B5BA9; --l4bg:#EAF0FB;
+  --naskh:'Noto Naskh Arabic','Amiri',serif;
+  --kufi:'Tajawal',system-ui,sans-serif;
+}
+@page{size:A4 landscape;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;color:var(--ink);font-family:var(--naskh)}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:297mm;height:210mm;padding:9mm 10mm 7mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;break-after:auto}
+@media screen{body{background:#ECE7F3}.page{margin:10mm auto;box-shadow:0 10px 30px -12px rgba(60,30,90,.35);background:#fff}}
+
+/* header */
+.head{display:flex;align-items:center;gap:6mm;border-bottom:1.2mm solid var(--violet);padding-bottom:2.5mm}
+.head img{height:13mm}
+.head .t{flex:1}
+.head h1{font-family:var(--naskh);font-weight:700;font-size:21pt;color:var(--plum);line-height:1.5}
+.head p{font-size:11pt;color:var(--muted);line-height:1.9}
+.fields{display:flex;gap:5mm;font-size:11pt;line-height:2;font-weight:600}
+.fields span{white-space:nowrap}
+.fields i{display:inline-block;border-bottom:.3mm dotted var(--ink);width:34mm;margin-inline-start:1.5mm}
+.fields i.s{width:20mm}
+
+.foot{margin-top:auto;padding-top:2mm;border-top:.3mm solid var(--line);display:flex;justify-content:space-between;gap:4mm;font-family:var(--kufi);font-size:7.6pt;color:var(--muted);line-height:1.6}
+
+/* ruler */
+.howto{margin:2.5mm 0 3mm;font-size:11.5pt;line-height:2;background:#F6F2FB;border-radius:2.5mm;padding:1mm 4mm;border-inline-start:1.5mm solid var(--gold)}
+.howto b{color:var(--plum)}
+.cut{border:.5mm dashed #8A7FA0;border-radius:2mm;padding:1.8mm;position:relative;margin-bottom:3.5mm}
+.cut::before{content:"✂";position:absolute;top:-4.2mm;inset-inline-end:6mm;background:#fff;padding:0 1.5mm;font-size:12pt;color:#8A7FA0;line-height:1;font-family:sans-serif}
+.ruler{border:.6mm solid var(--ink);border-radius:1.5mm;overflow:hidden;background:#fff}
+.ticks{height:5.5mm;border-bottom:.4mm solid var(--ink);background:
+  repeating-linear-gradient(to left,var(--ink) 0 .3mm,transparent .3mm 2mm) bottom/100% 1.8mm no-repeat,
+  repeating-linear-gradient(to left,var(--ink) 0 .4mm,transparent .4mm 10mm) bottom/100% 3.6mm no-repeat}
+.ruler-top{display:flex;justify-content:space-between;align-items:center;padding:.6mm 3mm;font-family:var(--kufi);font-weight:800;font-size:10pt;color:var(--violet);border-bottom:.3mm solid var(--line);line-height:1.7}
+.ruler-top small{font-family:var(--naskh);font-weight:600;color:var(--muted);font-size:9.5pt}
+.levels{display:grid;grid-template-columns:1.75fr 1fr 1fr 1fr}
+.lv{padding:1.2mm 2.6mm 1.4mm;border-bottom:2.2mm solid;border-inline-start:.4mm solid var(--ink);position:relative}
+.lv:first-child{border-inline-start:0}
+.lv .n{display:inline-flex;align-items:center;justify-content:center;width:7.5mm;height:7.5mm;border-radius:50%;color:#fff;font-family:var(--kufi);font-weight:800;font-size:12pt;vertical-align:middle;margin-inline-end:1.5mm}
+.lv h3{font-family:var(--naskh);font-weight:700;font-size:13.5pt;line-height:1.8}
+.lv .sub{font-size:10.5pt;font-weight:600;line-height:1.9;margin-bottom:.6mm}
+.lv ul{list-style:none;font-size:10.3pt;line-height:1.8}
+.lv li::before{content:"";display:inline-block;width:2.8mm;height:2.8mm;border:.35mm solid currentColor;border-radius:.6mm;margin-inline-end:1.5mm;vertical-align:-.2mm}
+.lv.l1{background:var(--l1bg);border-bottom-color:var(--l1)} .l1 .n{background:var(--l1)} .l1 h3,.l1 li::before{color:var(--l1)}
+.lv.l2{background:var(--l2bg);border-bottom-color:var(--l2)} .l2 .n{background:var(--l2)} .l2 h3,.l2 li::before{color:var(--l2)}
+.lv.l3{background:var(--l3bg);border-bottom-color:var(--l3)} .l3 .n{background:var(--l3)} .l3 h3,.l3 li::before{color:var(--l3)}
+.lv.l4{background:var(--l4bg);border-bottom-color:var(--l4)} .l4 .n{background:var(--l4)} .l4 h3,.l4 li::before{color:var(--l4)}
+.lv li{color:var(--ink)}
+.bar{height:2.2mm;background:linear-gradient(to left,var(--l1) 0 39%,var(--l2) 39% 59.3%,var(--l3) 59.3% 79.6%,var(--l4) 79.6%)}
+.rule{font-size:10pt;font-weight:600;text-align:center;padding:.6mm 2mm;border-top:.3mm solid var(--line);line-height:1.9;color:var(--plum)}
+
+/* questions station */
+.station-rules{display:flex;gap:3mm;margin:2.5mm 0 2.5mm}
+.station-rules div{flex:1;background:#F6F2FB;border-radius:2.5mm;padding:.8mm 3mm;font-size:10.5pt;line-height:1.9;font-weight:600;border-inline-start:1.5mm solid var(--gold)}
+.station-rules b{font-family:var(--kufi);color:var(--violet);margin-inline-end:1mm}
+.qgrid{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,1fr);grid-auto-flow:column;gap:2.4mm 4mm;margin-bottom:2mm}
+.q{border:.45mm solid var(--violet);border-radius:2.5mm;display:flex;flex-direction:column;padding:1.2mm 3mm 1mm;position:relative}
+.q .qh{display:flex;align-items:center;justify-content:space-between;gap:2mm}
+.q .lab{font-family:var(--naskh);font-weight:700;font-size:11.5pt;color:var(--violet);line-height:1.7}
+.q .num{display:inline-flex;align-items:center;justify-content:center;min-width:7mm;height:7mm;padding:0 1mm;border-radius:50%;background:var(--violet);color:#fff;font-family:var(--kufi);font-weight:800;font-size:11pt;margin-inline-start:1mm;vertical-align:middle}
+.q .ticks2{font-size:9pt;color:var(--muted);font-weight:600;line-height:1.7;white-space:nowrap}
+.q .ticks2 span::before{content:"";display:inline-block;width:2.6mm;height:2.6mm;border:.3mm solid var(--muted);border-radius:.5mm;margin-inline-end:1mm;vertical-align:-.2mm}
+.q .ticks2 span+span{margin-inline-start:3mm}
+.q .lines{flex:1;background:repeating-linear-gradient(to bottom,transparent 0 6.6mm,#B9AFCB 6.6mm 6.9mm);margin-top:.5mm}
+
+/* teacher guide */
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:4mm 0 4mm}
+.card{border:.4mm solid var(--line);border-radius:3mm;padding:3mm 4.5mm;background:#FCFAFE}
+.card h2{font-family:var(--naskh);font-weight:700;font-size:13.5pt;color:var(--plum);line-height:1.9;margin-bottom:1mm}
+.card ol{list-style:arabic-indic}
+.card ol,.card ul{padding-inline-start:6mm;font-size:11pt;line-height:2}
+.card li{margin-bottom:.4mm}
+.card p{font-size:11pt;line-height:2}
+</style>
+</head>
+<body>
+
+<!-- ========== الصفحة ١: مسطرة الفهم ========== -->
+<section class="page">
+  <header class="head">
+    <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
+    <div class="t">
+      <h1>مِسْطَرَةُ الفَهْمِ</h1>
+      <p>أَداةٌ بَصَرِيَّةٌ تُخْبِرُ المُعَلِّمَ بِمُسْتَوى فَهْمِكَ دونَ أَنْ تُقاطِعَ الدَّرْسَ.</p>
+    </div>
+    <div class="fields"><span>الاسْمُ:<i></i></span><span>الصَّفُّ:<i class="s"></i></span></div>
+  </header>
+
+  <div class="howto">
+    <b>التَّعْليماتُ:</b> قُصَّ المِسْطَرَةَ عَلى الخَطِّ المُتَقَطِّعِ، وَضَعْها عَلى طاوِلَتِكَ، ثُمَّ ضَعْ مِشْبَكَ الوَرَقِ عَلى المُسْتَوى الَّذي يَصِفُ فَهْمَكَ الآنَ، وَحَرِّكْهُ كُلَّما تَغَيَّرَ.
+  </div>
+
+  <!-- مسطرة ١ -->
+  <div class="cut">
+    <div class="ruler">
+      <div class="ticks"></div>
+      <div class="ruler-top"><span>مِسْطَرَةُ فَهْمي</span><small>الاسْمُ: ..............................</small></div>
+      <div class="levels">
+        <div class="lv l1">
+          <h3><span class="n">١</span>عالِقٌ: أَحْتاجُ إِلى مُساعَدَةٍ</h3>
+          <ul>
+            <li>عالِقٌ عِنْدَ الفِكْرَةِ الأُولى.</li>
+            <li>عالِقٌ عِنْدَ فَهْمِ المَطْلوبِ مِنَ السُّؤالِ.</li>
+            <li>عالِقٌ عِنْدَ مَعْنى مُصْطَلَحٍ جَديدٍ.</li>
+            <li>عالِقٌ عِنْدَ خُطْوَةٍ مِنْ خُطُواتِ الحَلِّ.</li>
+            <li>عالِقٌ عِنْدَ رَبْطِ الفِكْرَةِ بِما تَعَلَّمْتُهُ سابِقاً.</li>
+          </ul>
+        </div>
+        <div class="lv l2">
+          <h3><span class="n">٢</span>أَفْهَمُ جُزْئِيّاً</h3>
+          <p class="sub">أُحاوِلُ وَحْدي أَوَّلاً.</p>
+          <ul>
+            <li>أُعيدُ قِراءَةَ المِثالِ.</li>
+            <li>أُراجِعُ مُلاحَظاتي.</li>
+          </ul>
+        </div>
+        <div class="lv l3">
+          <h3><span class="n">٣</span>فَهِمْتُ</h3>
+          <p class="sub">أَعْمَلُ وَحْدي بِثِقَةٍ.</p>
+          <ul>
+            <li>أُطَبِّقُ دونَ مُساعَدَةٍ.</li>
+            <li>أَتَحَقَّقُ مِنْ إِجابَتي.</li>
+          </ul>
+        </div>
+        <div class="lv l4">
+          <h3><span class="n">٤</span>أَسْتَطيعُ الشَّرْحَ</h3>
+          <p class="sub">أَشْرَحُ الفِكْرَةَ لِغَيْري.</p>
+          <ul>
+            <li>أُساعِدُ زَميلي.</li>
+            <li>أَقْتَرِحُ مِثالاً جَديداً.</li>
+          </ul>
+        </div>
+      </div>
+            <div class="rule">قَبْلَ أَنْ أُقاطِعَ: أَضَعُ المِشْبَكَ عَلى مُسْتَوايَ، وَأَكْتُبُ سُؤالي في «مَحَطَّةِ الأَسْئِلَةِ».</div>
+    </div>
+  </div>
+
+  <!-- مسطرة ٢ -->
+  <div class="cut">
+    <div class="ruler">
+      <div class="ticks"></div>
+      <div class="ruler-top"><span>مِسْطَرَةُ فَهْمي</span><small>الاسْمُ: ..............................</small></div>
+      <div class="levels">
+        <div class="lv l1">
+          <h3><span class="n">١</span>عالِقٌ: أَحْتاجُ إِلى مُساعَدَةٍ</h3>
+          <ul>
+            <li>عالِقٌ عِنْدَ الفِكْرَةِ الأُولى.</li>
+            <li>عالِقٌ عِنْدَ فَهْمِ المَطْلوبِ مِنَ السُّؤالِ.</li>
+            <li>عالِقٌ عِنْدَ مَعْنى مُصْطَلَحٍ جَديدٍ.</li>
+            <li>عالِقٌ عِنْدَ خُطْوَةٍ مِنْ خُطُواتِ الحَلِّ.</li>
+            <li>عالِقٌ عِنْدَ رَبْطِ الفِكْرَةِ بِما تَعَلَّمْتُهُ سابِقاً.</li>
+          </ul>
+        </div>
+        <div class="lv l2">
+          <h3><span class="n">٢</span>أَفْهَمُ جُزْئِيّاً</h3>
+          <p class="sub">أُحاوِلُ وَحْدي أَوَّلاً.</p>
+          <ul>
+            <li>أُعيدُ قِراءَةَ المِثالِ.</li>
+            <li>أُراجِعُ مُلاحَظاتي.</li>
+          </ul>
+        </div>
+        <div class="lv l3">
+          <h3><span class="n">٣</span>فَهِمْتُ</h3>
+          <p class="sub">أَعْمَلُ وَحْدي بِثِقَةٍ.</p>
+          <ul>
+            <li>أُطَبِّقُ دونَ مُساعَدَةٍ.</li>
+            <li>أَتَحَقَّقُ مِنْ إِجابَتي.</li>
+          </ul>
+        </div>
+        <div class="lv l4">
+          <h3><span class="n">٤</span>أَسْتَطيعُ الشَّرْحَ</h3>
+          <p class="sub">أَشْرَحُ الفِكْرَةَ لِغَيْري.</p>
+          <ul>
+            <li>أُساعِدُ زَميلي.</li>
+            <li>أَقْتَرِحُ مِثالاً جَديداً.</li>
+          </ul>
+        </div>
+      </div>
+            <div class="rule">قَبْلَ أَنْ أُقاطِعَ: أَضَعُ المِشْبَكَ عَلى مُسْتَوايَ، وَأَكْتُبُ سُؤالي في «مَحَطَّةِ الأَسْئِلَةِ».</div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>إعداد وتقديم: المدرّبة المعتمدة هدى وليد • دبلوم المدرّب المحترف TOT-CPT، من مركز EBC المرخّص من KHDA</span>
+    <span>© جميع حقوق الطبع والنشر محفوظة لأكاديمية سبارك للقيادة المهنية</span>
+  </footer>
+</section>
+
+<!-- ========== الصفحة ٢: محطة الأسئلة ========== -->
+<section class="page">
+  <header class="head">
+    <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
+    <div class="t">
+      <h1>مَحَطَّةُ الأَسْئِلَةِ</h1>
+      <p>اُكْتُبْ سُؤالَكَ هُنا بَدَلاً مِنْ مُقاطَعَةِ الشَّرْحِ، وَانْتَظِرْ وَقْتَ المَحَطَّةِ.</p>
+    </div>
+    <div class="fields"><span>الاسْمُ:<i></i></span><span>الصَّفُّ:<i class="s"></i></span><span>الدَّرْسُ:<i></i></span></div>
+  </header>
+
+  <div class="station-rules">
+    <div><b>١</b>اُكْتُبْ سُؤالَكَ فَوْرَ أَنْ يَخْطُرَ لَكَ.</div>
+    <div><b>٢</b>حاوِلْ أَنْ تَجِدَ الإِجابَةَ وَحْدَكَ أَوَّلاً.</div>
+    <div><b>٣</b>اِنْتَظِرْ إِشارَةَ المُعَلِّمِ لِتَطْرَحَ سُؤالَكَ.</div>
+  </div>
+
+  <div class="qgrid">
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">١</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٢</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٣</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٤</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٥</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٦</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٧</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٨</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">٩</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+    <div class="q"><div class="qh"><span class="lab">السُّؤالُ<span class="num">١٠</span></span><span class="ticks2"><span>وَجَدْتُ الإِجابَةَ وَحْدي</span><span>أَجابَ المُعَلِّمُ</span></span></div><div class="lines"></div></div>
+  </div>
+
+  <footer class="foot">
+    <span>إعداد وتقديم: المدرّبة المعتمدة هدى وليد • دبلوم المدرّب المحترف TOT-CPT، من مركز EBC المرخّص من KHDA</span>
+    <span>© جميع حقوق الطبع والنشر محفوظة لأكاديمية سبارك للقيادة المهنية</span>
+  </footer>
+</section>
+
+<!-- ========== الصفحة ٣: دليل المعلم ========== -->
+<section class="page">
+  <header class="head">
+    <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
+    <div class="t">
+      <h1>دَليلُ المُعَلِّمِ: مِسْطَرَةُ الفَهْمِ وَمَحَطَّةُ الأَسْئِلَةِ</h1>
+      <p>استراتيجية ميدانية لإدارة كثرة المقاطعة والأسئلة، مع الحفاظ على فضول المتعلّمين وحقّهم في السؤال.</p>
+    </div>
+  </header>
+
+  <div class="guide">
+    <div class="card">
+      <h2>لِمَن هذه الأداة؟</h2>
+      <ul>
+        <li>المتعلّمون كثيرو المقاطعة والاندفاع، ومنهم مَن تظهر لديهم صعوبة في الانتباه أو فرط في الحركة.</li>
+        <li>المتعلّمون القلقون الذين يحتاجون إلى طمأنة متكرّرة.</li>
+        <li>المتعلّمون كثيرو الأسئلة بدافع الفضول، لنحفظ أسئلتهم دون أن نوقف الشرح.</li>
+        <li>المتعلّمون الخجولون الذين لا يرفعون أيديهم، فتكشف المسطرة حاجتهم بصمت.</li>
+      </ul>
+      <h2>التهيئة (أوّل مرّة)</h2>
+      <ol>
+        <li>اطبعوا المسطرة على ورق مقوّى، وقصّوها، وأعطوا كلَّ واحدٍ منهم مشبكَ ورق.</li>
+        <li>نمذِجوا المستويات الأربعة بمثال حيّ أمام الصفّ.</li>
+        <li>اتّفقوا على إشارة واضحة لوقت «المحطة»، مثل جرس أو بطاقة ملوّنة.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>خطوات التنفيذ في الحصة</h2>
+      <ol>
+        <li>يضع المتعلّم المشبك على مستواه، ويحرّكه كلّما تغيّر فهمه.</li>
+        <li>يمرّ المعلّم بنظرة سريعة على الطاولات كلّ بضع دقائق: المستوى ١ أولوية للدعم الفردي، والمستوى ٤ شريك جاهز لتعليم الأقران.</li>
+        <li>يدوّن المتعلّم أيّ سؤال يخطر له في «محطة الأسئلة» بدلاً من المقاطعة.</li>
+        <li>تُفتح المحطة في نهاية كلّ مقطع من الشرح (دقيقتان إلى ثلاث)، ثمّ في نهاية الحصة.</li>
+        <li>يضع المتعلّم علامة أمام كلّ سؤال: وجد الإجابة وحده، أو أجابه المعلّم.</li>
+      </ol>
+      <h2>نصائح للنجاح</h2>
+      <ul>
+        <li>امدحوا السلوك المرغوب فوراً: «شكراً لأنّك كتبت سؤالك وانتظرت».</li>
+        <li>قراءة بنود المستوى ١ تكشف موضع التعثّر بدقّة: الفكرة، أو المطلوب، أو المصطلح، أو الخطوة، أو الربط.</li>
+        <li>ابدؤوا بأسئلة المحطة في الحصة التالية لتعزيز قيمة السؤال.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>إعداد وتقديم: المدرّبة المعتمدة هدى وليد • دبلوم المدرّب المحترف TOT-CPT، من مركز EBC المرخّص من KHDA</span>
+    <span>© جميع حقوق الطبع والنشر محفوظة لأكاديمية سبارك للقيادة المهنية</span>
+  </footer>
+</section>
+
+</body>
+</html>
