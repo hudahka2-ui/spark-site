@@ -7,97 +7,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;600;700&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#241A33; --muted:#5E536F; --line:#D9CFE8; --plum:#6E1F35; --violet:#5B3FA0; --gold:#B8925A;
-  --red:#C0392B; --redbg:#FDECEA; --green:#2E8B57; --greenbg:#E9F6EF; --blue:#3B5BA9; --bluebg:#EAF0FB;
-  --naskh:'Noto Naskh Arabic','Amiri',serif; --kufi:'Tajawal',system-ui,sans-serif;
-}
+:root{--ink:#241A33;--muted:#5E536F;--line:#D9CFE8;--red:#C0392B;--redbg:#FDECEA;
+  --naskh:'Noto Naskh Arabic','Amiri',serif;--kufi:'Tajawal',system-ui,sans-serif;--emoji:'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif}
 @page{size:A4 landscape;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff;color:var(--ink);font-family:var(--naskh)}
 body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.page{width:297mm;height:210mm;padding:9mm 10mm 7mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+.page{width:297mm;height:210mm;padding:9mm 10mm 7mm;overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column}
 .page:last-child{page-break-after:auto;break-after:auto}
 @media screen{body{background:#ECE7F3}.page{margin:10mm auto;box-shadow:0 10px 30px -12px rgba(60,30,90,.35);background:#fff}}
 .foot{margin-top:auto;padding-top:2mm;border-top:.3mm solid var(--line);display:flex;justify-content:space-between;gap:4mm;font-family:var(--kufi);font-size:7.6pt;color:var(--muted);line-height:1.6}
 
 /* sign */
-.sign{flex:1;border:2.2mm solid var(--red);border-radius:6mm;padding:5mm 9mm 4mm;display:flex;flex-direction:column;position:relative;margin-bottom:4mm;
-  background:repeating-linear-gradient(-45deg,var(--red) 0 5mm,#fff 5mm 10mm) top/100% 4mm no-repeat,
-             repeating-linear-gradient(-45deg,var(--red) 0 5mm,#fff 5mm 10mm) bottom/100% 4mm no-repeat,#fff}
-.sign-top{display:flex;align-items:center;justify-content:space-between;margin-top:4mm}
-.sign-top img{height:13mm}
-.siren{width:20mm;height:20mm;flex:none;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--kufi);font-weight:800;font-size:30pt;line-height:1;box-shadow:0 0 0 2.5mm var(--redbg)}
-.title{display:flex;align-items:center;gap:8mm}
-.sign h1{font-family:var(--naskh);font-weight:700;font-size:66pt;color:var(--red);text-align:center;white-space:nowrap;line-height:1.6}
-.sign .lead{text-align:center;font-size:19pt;font-weight:700;color:var(--plum);line-height:1.8;margin-bottom:3mm}
-.cols{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:4mm;flex:none;margin:auto 0}
-.box{min-height:62mm}
-.box{border-radius:3.5mm;padding:3mm 5mm;border:.5mm solid}
-.box h2{font-family:var(--naskh);font-weight:700;font-size:17pt;line-height:1.9;margin-bottom:1mm}
-.box ul{list-style:none;font-size:14.5pt;line-height:2.05;font-weight:600}
-.box li::before{content:"●";font-size:7pt;vertical-align:.6mm;margin-inline-end:2mm}
-.box p{font-size:14.5pt;line-height:2.05;font-weight:600}
-.b-yes{background:var(--greenbg);border-color:var(--green)} .b-yes h2,.b-yes li::before{color:var(--green)}
-.b-no{background:var(--bluebg);border-color:var(--blue)} .b-no h2,.b-no li::before{color:var(--blue)}
-.b-danger{background:var(--redbg);border-color:var(--red)} .b-danger h2{color:var(--red)}
-.b-danger .big{font-size:17pt;font-weight:700;color:var(--red);line-height:1.9;margin-top:1mm}
+.sign{flex:1;margin-bottom:4mm;border:3mm solid var(--red);border-radius:8mm;background:var(--redbg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm;position:relative}
+.sign img{position:absolute;top:6mm;inset-inline-start:8mm;height:13mm}
+.sign .icon{font-family:var(--emoji);font-size:64pt;line-height:1.2}
+.sign h1{font-family:var(--naskh);font-weight:700;font-size:92pt;color:var(--red);line-height:1.5;white-space:nowrap}
 
 /* cards */
-.head{display:flex;align-items:center;gap:6mm;border-bottom:1.2mm solid var(--red);padding-bottom:2.5mm}
-.head img{height:13mm}
-.head .t{flex:1}
-.head h1{font-family:var(--naskh);font-weight:700;font-size:21pt;color:var(--red);line-height:1.5}
-.head p{font-size:11pt;color:var(--muted);line-height:1.9}
-.cards{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:5mm;margin:4mm 0 3mm}
-.card{border:.5mm dashed #8A7FA0;border-radius:2mm;padding:1.6mm;position:relative}
-.card::before{content:"✂";position:absolute;top:-4.2mm;inset-inline-end:5mm;background:#fff;padding:0 1.2mm;font-size:11pt;color:#8A7FA0;line-height:1;font-family:sans-serif}
-.in{height:100%;border:.6mm solid var(--red);border-radius:2.5mm;padding:1.5mm 3mm 2mm;display:flex;flex-direction:column}
-.in .ttl{display:flex;align-items:center;gap:2mm;font-family:var(--naskh);font-weight:700;font-size:13pt;color:var(--red);line-height:1.8;border-bottom:.3mm solid var(--line)}
-.in .ttl i{font-style:normal;display:inline-flex;width:7mm;height:7mm;border-radius:50%;background:var(--red);color:#fff;align-items:center;justify-content:center;font-family:var(--kufi);font-weight:800;font-size:12pt}
-.in .row{font-size:10pt;font-weight:600;line-height:2;display:flex;gap:3mm}
-.in .row span{flex:1;white-space:nowrap}
-.in .row b{display:inline-block;border-bottom:.3mm dotted var(--ink);width:60%;margin-inline-start:1mm}
-.in ul{list-style:none;font-size:10pt;line-height:1.85}
-.in li::before{content:"";display:inline-block;width:2.7mm;height:2.7mm;border:.35mm solid var(--red);border-radius:.6mm;margin-inline-end:1.5mm;vertical-align:-.2mm}
-.in .wl{flex:1;font-size:10pt;font-weight:600;line-height:1.9;background:repeating-linear-gradient(to bottom,transparent 0 6.2mm,#B9AFCB 6.2mm 6.5mm);min-height:7mm}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:3mm}
+.top img{height:12mm}
+.top h2{font-family:var(--naskh);font-weight:700;font-size:20pt;color:var(--red);line-height:1.6}
+.cards{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:6mm;margin:2mm 0 4mm}
+.card{border:.5mm dashed #8A7FA0;border-radius:3mm;padding:2mm;position:relative}
+.card::before{content:"✂";position:absolute;top:-4.4mm;inset-inline-end:5mm;background:#fff;padding:0 1.2mm;font-size:11pt;color:#8A7FA0;line-height:1;font-family:sans-serif}
+.in{height:100%;border:.8mm solid var(--red);border-radius:3mm;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2mm 4mm 3mm}
+.in .e{font-family:var(--emoji);font-size:50pt;line-height:1.25}
+.in .w{font-family:var(--naskh);font-weight:700;font-size:23pt;line-height:1.8;text-align:center}
+.in .n{align-self:stretch;margin-top:2mm;font-size:11pt;font-weight:600;color:var(--muted);line-height:2}
+.in .n i{display:inline-block;width:75%;border-bottom:.3mm dotted var(--ink);margin-inline-start:1mm}
 </style>
 </head>
 <body>
 
-<!-- ========== الصفحة ١: لافتة الصندوق ========== -->
+<!-- الصفحة ١: لافتة الصندوق -->
 <section class="page">
   <div class="sign">
-    <div class="sign-top">
-      <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
-      <div class="title"><div class="siren">!</div><h1>صُنْدوقُ الطَّوارِئِ</h1><div class="siren">!</div></div>
-      <img src="../assets/4cad3da84a1dce62.png" alt="" style="visibility:hidden">
-    </div>
-    <p class="lead">لِلْأُمورِ العاجِلَةِ فَقَطْ: اُكْتُبْ بِطاقَتَكَ، وَضَعْها هُنا، وَعُدْ إِلى عَمَلِكَ.</p>
-    <div class="cols">
-      <div class="box b-yes">
-        <h2>✔ أَضَعُ بِطاقَةً في الصُّنْدوقِ إِذا:</h2>
-        <ul>
-          <li>احْتَجْتُ إِلى الخُروجِ إِلى دَوْرَةِ المِياهِ.</li>
-          <li>احْتَجْتُ إِلى شُرْبِ الماءِ.</li>
-          <li>نَسيتُ أَداةً ضَرورِيَّةً لِإِكْمالِ عَمَلي.</li>
-          <li>شَعَرْتُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-          <li>أَرَدْتُ أَنْ أُخْبِرَ المُعَلِّمَ بِأَمْرٍ خاصٍّ.</li>
-        </ul>
-      </div>
-      <div class="box b-no">
-        <h2>✖ لَيْسَ طارِئاً:</h2>
-        <ul>
-          <li>سُؤالٌ عَنِ الدَّرْسِ؟<br>أَكْتُبُهُ في «مَحَطَّةِ الأَسْئِلَةِ».</li>
-          <li>لَمْ أَفْهَمْ فِكْرَةً؟<br>أَضَعُ المِشْبَكَ عَلى «مِسْطَرَةِ الفَهْمِ».</li>
-        </ul>
-      </div>
-      <div class="box b-danger">
-        <h2>⚠ خَطَرٌ أَوْ أَلَمٌ شَديدٌ؟</h2>
-        <p>إِصابَةٌ، أَوْ تَعَبٌ شَديدٌ، أَوْ خَطَرٌ عَلَيَّ أَوْ عَلى زَميلي:</p>
-        <p class="big">لا أَكْتُبُ بِطاقَةً، بَلْ أُخْبِرُ المُعَلِّمَ فَوْراً.</p>
-      </div>
-    </div>
+    <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
+    <div class="icon">🚨</div>
+    <h1>صُنْدوقُ الطَّوارِئِ</h1>
   </div>
   <footer class="foot">
     <span>إعداد وتقديم: المدرّبة المعتمدة هدى وليد • دبلوم المدرّب المحترف TOT-CPT، من مركز EBC المرخّص من KHDA</span>
@@ -105,92 +53,20 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   </footer>
 </section>
 
-<!-- ========== الصفحة ٢: بطاقات الطوارئ ========== -->
+<!-- الصفحة ٢: بطاقات بسيطة -->
 <section class="page">
-  <header class="head">
+  <div class="top">
+    <h2>بِطاقاتُ الطَّوارِئِ</h2>
     <img src="../assets/4cad3da84a1dce62.png" alt="شعار أكاديمية سبارك">
-    <div class="t">
-      <h1>بِطاقاتُ صُنْدوقِ الطَّوارِئِ</h1>
-      <p>قُصَّ البِطاقَةَ، وَضَعْ عَلامَةً أَمامَ حاجَتِكَ، ثُمَّ ضَعْها في الصُّنْدوقِ بِهُدوءٍ.</p>
-    </div>
-  </header>
-
-  <div class="cards">
-    <!-- card x6 -->
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
-    <div class="card"><div class="in">
-      <div class="ttl"><i>!</i>بِطاقَةُ طَوارِئَ</div>
-      <div class="row"><span>الاسْمُ:<b></b></span><span>الوَقْتُ:<b></b></span></div>
-      <ul>
-        <li>أَحْتاجُ إِلى دَوْرَةِ المِياهِ.</li>
-        <li>أَحْتاجُ إِلى شُرْبِ الماءِ.</li>
-        <li>نَسيتُ أَداةً ضَرورِيَّةً.</li>
-        <li>أَشْعُرُ بِانْزِعاجٍ يَمْنَعُني مِنَ التَّرْكيزِ.</li>
-        <li>أُريدُ أَنْ أُخْبِرَكَ بِأَمْرٍ خاصٍّ.</li>
-      </ul>
-      <div class="wl">أَوْضِحْ بِاخْتِصارٍ:</div>
-    </div></div>
   </div>
-
+  <div class="cards">
+    <div class="card"><div class="in"><div class="e">🚻</div><div class="w">دَوْرَةُ المِياهِ</div><div class="n">الاسْمُ:<i></i></div></div></div>
+    <div class="card"><div class="in"><div class="e">💧</div><div class="w">أُريدُ أَنْ أَشْرَبَ</div><div class="n">الاسْمُ:<i></i></div></div></div>
+    <div class="card"><div class="in"><div class="e">✏️</div><div class="w">نَسيتُ أَداتي</div><div class="n">الاسْمُ:<i></i></div></div></div>
+    <div class="card"><div class="in"><div class="e">🤒</div><div class="w">لا أَشْعُرُ بِخَيْرٍ</div><div class="n">الاسْمُ:<i></i></div></div></div>
+    <div class="card"><div class="in"><div class="e">💬</div><div class="w">أُريدُ أَنْ أَتَحَدَّثَ مَعَكَ</div><div class="n">الاسْمُ:<i></i></div></div></div>
+    <div class="card"><div class="in"><div class="e">📝</div><div class="w">أَمْرٌ آخَرُ</div><div class="n">الاسْمُ:<i></i></div></div></div>
+  </div>
   <footer class="foot">
     <span>إعداد وتقديم: المدرّبة المعتمدة هدى وليد • دبلوم المدرّب المحترف TOT-CPT، من مركز EBC المرخّص من KHDA</span>
     <span>© جميع حقوق الطبع والنشر محفوظة لأكاديمية سبارك للقيادة المهنية</span>
